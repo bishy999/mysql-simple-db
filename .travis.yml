@@ -1,0 +1,14 @@
+dist: trusty
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t my-simple-sqldb .
+      - docker images
+      - docker tag my-simple-sqldb $DOCKER_USERNAME/my-simple-sqldb:1.${TRAVIS_BUILD_NUMBER}
+      - docker push $DOCKER_USERNAME/my-simple-sqldb:1.${TRAVIS_BUILD_NUMBER}
