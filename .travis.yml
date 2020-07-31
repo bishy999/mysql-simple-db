@@ -8,7 +8,7 @@ jobs:
     - stage: build docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker build -t mmysql-simple-db .
+      - docker build -t mysql-simple-db .
       - docker images
       - docker tag mysql-simple-db $DOCKER_USERNAME/mysql-simple-db:1.${TRAVIS_BUILD_NUMBER}
       - docker push $DOCKER_USERNAME/mysql-simple-db:1.${TRAVIS_BUILD_NUMBER}
