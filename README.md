@@ -1,6 +1,6 @@
 # pull and run image
 ```
-sudo docker run --name=mysql-simple-db --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/my-simple-sqldb:1.4
+sudo docker run --name=mysql-simple-db --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/mysql-simple-db:1.4
 ```
 
 
