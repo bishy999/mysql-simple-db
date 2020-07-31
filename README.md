@@ -1,6 +1,6 @@
 # pull and run image
 ```
-sudo docker run --name=my-simple-sqldb --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/my-simple-sqldb:1.2
+sudo docker run --name=mysql-simple-db --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/my-simple-sqldb:1.3
 ```
 
 
@@ -14,7 +14,7 @@ Note: this is automatically done via travis (see .travis.yml) but manual steps a
 
 # build image (don't use cache)
 ```
-sudo docker build -t my-simple-sqldb .
+sudo docker build -t mysql-simple-db .
 ```
 
 # list images
@@ -36,7 +36,7 @@ sudo docker tag <image ID>  <docker hub username>/<repository><image name>:<vers
 
 e.g.
 
-sudo docker tag my-simple-sqldb bishy999/my-simple-sqldb:1.2
+sudo docker tag mysql-simple-db bishy999/mysql-simple-db:1.3
 ```
 
 
@@ -47,7 +47,7 @@ docker push <docker hub username>/<repository><image name>
 
 e.g. on Mac
 
-sudo docker push bishy999/my-simple-sqldb:1.2
+sudo docker push bishy999/mysql-simple-db:1.3
 ```
 
 
@@ -60,5 +60,5 @@ image used in example here is stored on docker hub e.g https://hub.docker.com/r/
 
 # create a container from your image and run it
 ```
-sudo docker run --name=my-simple-sqldb --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/my-simple-sqldb:1.2
+sudo docker run --name=mysql-simple-db --hostname=mysql -e MYSQL_ROOT_PASSWORD=Password1 -p 3306:3306 -d bishy999/mysql-simple-db:1.3
 ```
